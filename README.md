@@ -25,7 +25,9 @@ Please refer to the Zenodo repository associated with the manuscript for data ac
 
 ## Importing processed Phenocycler data into R
 
-- This can be performed using the [Giotto R package](https://giottosuite.readthedocs.io/en/master/)
+- Data generated through the Enable Medicine Portal / ATLAS can be accessed and exported using Enable's Workbench and their two R packages: emconnect and SpatialMap.
+- Using SpatialMap, we exported structured data to CSV files containing: segmented cell centroids ("coords.csv"), expression data ("expr.csv") and all the generated metadata - such as annotations, clusters, etc. ("meta.csv") for each high-plex image
+- Importing these for further processing can be performed using the [Giotto R package](https://giottosuite.readthedocs.io/en/master/)
 
 ```shell
 #--- Setup
