@@ -11,7 +11,7 @@ Please refer to the Zenodo repository associated with the manuscript for data ac
 
 - [Visium ST processing](#STVisium)
 - [Spatial alignment of Phenocycler to Visium data](#ImageAlignment)
-- [Importing processed Phenocycler data into R]
+- Importing processed Phenocycler data into R
 
 ---
 
