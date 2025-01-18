@@ -16,11 +16,26 @@ Please refer to the Zenodo repository associated with the manuscript for data ac
 ---
 
 ## Visium ST processing
+- Two Jupyter notebooks provided to detail Visium SD data processing (*STVisium_preprocessing_manuscript*) and spot deconvolution using SpaCET (*STVisium_Malignant_deconvolution_manuscript*)
+- Both routines running smoothly on:
+R version 4.4.1 (2024-06-14)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sonoma 14.6.1
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Paris
+tzcode source: internal
 
 ---
 
 ## Spatial alignment of Phenocycler to Visium data
-- The image alignment and generation of a pseudo-spot grid for Phenocycler data procedures were performed in Python.
+- The image alignment and generation of a pseudo-spot grid for Phenocycler data procedures were performed in **Python** (v3.11.9).
 - The alignment procedure involved identifying the optimal affine transformation using two parameters: 1) the scaling factor and 2) the shift term. The scaling factor was determined either directly from the microscopy images’ resolution metadata or estimated from the images themselves. The estimation protocol involved comparing the distribution of vertical and horizontal distances between the masked Visium and Phenocycler images. The shift term was determined by aligning the centers of mass of the two masked images.
 These parameters were then fine-tuned using a grid search optimization procedure. The masked images were aligned, and the matching score was calculated using one of two alignment scores: 1) the total number of mismatched pixels in the aligned masks, or 2) the geometric mean of the number of mismatched pixels from each of the two masks independently.
 - For the creation of a pseudo-spot grid for Phenocycler data, the identified affine image transformation was applied to the cell centroids segmented from the Phenocycler data. The transformed centroid coordinates were then assigned to the coordinates of Visium spots by matching each centroid to the nearest spot within the pseudospot boundary (defined as a distance of less than 27.5 μm from the cell centroid to the spot center). The cell-level Phenocycler expression signals were then aggregated to the pseudo-spot level by summing the signals from all the corresponding cells. The identity of a pseudospot was defined by the most abundant cell type or state within each pseudospot.
