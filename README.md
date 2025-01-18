@@ -18,20 +18,21 @@ Please refer to the Zenodo repository associated with the manuscript for data ac
 ## Visium ST processing
 - Two Jupyter notebooks provided to detail Visium SD data processing (*STVisium_preprocessing_manuscript*) and spot deconvolution using SpaCET (*STVisium_Malignant_deconvolution_manuscript*)
 - Both routines running smoothly on:
+```shell
 R version 4.4.1 (2024-06-14)
 Platform: aarch64-apple-darwin20
 Running under: macOS Sonoma 14.6.1
 
 Matrix products: default
-BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
 LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 
 time zone: Europe/Paris
-tzcode source: internal
-
+tzcode source: internal 
+```
 ---
 
 ## Spatial alignment of Phenocycler to Visium data
